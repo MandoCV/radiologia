@@ -2,8 +2,9 @@
   <b-container fluid>
     <b-row>
       <b-col md="12">
-        <b-button @click="abrirModalFiltros">Aplicar Filtros</b-button>
-        <b-button @click="limpiarFiltros">Limpiar Filtros</b-button>
+        <b-button variant="success" class="mb-3 me-1" @click="abrirModalFiltros">Aplicar Filtros <i class="ri-settings-4-fill"></i></b-button>
+        <b-button variant="danger" class="mb-3 me-1" @click="limpiarFiltros">Limpiar Filtros <i class="ri-radio-button-fill"></i></b-button>
+
         <b-modal id="filterModal" v-model="showFilterModal" title="Filtros" ok-title="Aplicar" cancel-title="Cancelar" @ok="aplicarFiltros">
           <b-form @submit.stop.prevent="aplicarFiltros">
             <b-form-group label="Filtrar por Tipo de Estudio">

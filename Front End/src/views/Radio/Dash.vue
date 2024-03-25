@@ -101,7 +101,7 @@
   </b-row>
 
 <!-- Modal de confirmación -->
-<b-modal id="confirmModal" v-model="showConfirm" title="Confirmación de Descarga" ok-title="Sí, Descargar" cancel-title="Cancelar" @ok="downloadImage">
+<b-modal id="confirmModal" v-model="showConfirm" title="Confirmación de Descarga" ok-title="Descargar" cancel-title="Cancelar" @ok="downloadImage">
     <!-- Contenido del modal -->
     <b-alert show variant="primary">
       <div class="iq-alert-icon">
