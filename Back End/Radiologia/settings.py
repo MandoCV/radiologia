@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'radiologia_imagen',
     'rest_framework',
     'corsheaders',
     'coreapi',
@@ -138,4 +139,5 @@ CORS_ALLOWED_ORIGINS = []
 #Configuracion de rest_framework
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.AutoSchema',
+    'DEFAULT_AUTHENTICATION_CLASSES': [],
 }
