@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Radio",
+    "name": "Radiología e imagen",
+    "is_heading": true,
+    "is_active": false,
+    "class_name": "",
+    "is_icon_class": true,
+    "icon": "",
+    "badge" : false
+  },
+  {
+    "title": "CRUD",
+    "name": "Crud",
+    "is_heading": false,
+    "is_active": false,
+    "link": {
+      "name": "Radio.Crud"
+    },
+    "class_name": "",
+    "is_icon_class": true,
+    "icon": "ri-hospital-fill",
+    "badge" : false
+  },
+  
+  {
+    "title": "Tabla Dinamica",
+    "name": "Tabla Dinamica",
+    "is_heading": false,
+    "is_active": false,
+    "link": {
+      "name": "Radio.Tabla"
+    },
+    "class_name": "",
+    "is_icon_class": true,
+    "icon": "ri-home-8-fill",
+    "badge" : false
+  },
+  {
+    "title": "Dashboard",
+    "name": "Dashboard",
+    "is_heading": false,
+    "is_active": false,
+    "link": {
+      "name": "Radio.Dash"
+    },
+    "class_name": "",
+    "is_icon_class": true,
+    "icon": "ri-briefcase-4-fill",
+    "badge" : false
+  }
+]
