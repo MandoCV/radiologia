@@ -16,15 +16,8 @@
         </div>
       </div>
       <nav class="navbar navbar-expand-lg navbar-light p-0">
-        <div class="mini-menu">
-          <router-link to="" class="mini-menu-item"></router-link>
-          <router-link to="/Radio/Crud" class="mini-menu-item">Crud</router-link>
-          <router-link to="/Radio/Tabla" class="mini-menu-item">Tabla</router-link>
-          <router-link to="/Radio/Dash" class="mini-menu-item">Dashboard</router-link>
-        </div>
-        <b-navbar-toggle target="nav">
-          <i class="ri-menu-3-line"></i>
-        </b-navbar-toggle>
+
+
         <b-collapse id="nav-collapse" is-nav>
           <slot name="responsiveRight" />
         </b-collapse>
