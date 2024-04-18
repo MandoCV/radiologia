@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-<a href="https://imgbb.com/"><img src="https://i.ibb.co/VMfcb2z/minecode-removebg-preview.png" alt="minecode-removebg-preview" border="0" /></a>
+<center><a href="https://imgbb.com/"><img src="https://i.ibb.co/VMfcb2z/minecode-removebg-preview.png" alt="minecode-removebg-preview" border="0" /></a><center>
     
 </head>
 <body>
