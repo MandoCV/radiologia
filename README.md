@@ -97,7 +97,7 @@
         <!-- Los objetivos restantes se incluyen de manera similar -->
     </div>
          <table border="1">
-              <h1>WIREFRAMES DE RADIOLOGIA E IMAGEN</h1>
+              <h1>RADIOLOGIA E IMAGEN -- SISTEMA</h1>
         <tr>
             <td><img src="https://i.ibb.co/jL9PMSR/Captura-de-pantalla-2024-04-18-173919.png" alt="Imagen 1" width="400" height="300"></td> 
             <td><img src="https://i.ibb.co/ZGB4bmP/Captura-de-pantalla-2024-04-18-174149.png" alt="Imagen 2" width="400" height="300"></td>
