@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Minecode</title>
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/VMfcb2z/minecode-removebg-preview.png" alt="minecode-removebg-preview" border="0" /></a>
     
 </head>
