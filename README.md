@@ -96,6 +96,20 @@
         <p>Se integrarán herramientas que faciliten la interpretación y el análisis por parte del personal médico, compatibles con una amplia variedad de formatos de archivos de imágenes médicas y que ofrezcan funciones de zoom, rotación y mejora de la calidad de imagen.</p>
         <!-- Los objetivos restantes se incluyen de manera similar -->
     </div>
+         <table border="1">
+              <h1>WIREFRAMES DE RADIOLOGIA E IMAGEN</h1>
+        <tr>
+            <td><img src="https://i.ibb.co/jL9PMSR/Captura-de-pantalla-2024-04-18-173919.png" alt="Imagen 1" width="400" height="300"></td> 
+            <td><img src="https://i.ibb.co/ZGB4bmP/Captura-de-pantalla-2024-04-18-174149.png" alt="Imagen 2" width="400" height="300"></td>
+            <td><img src="https://i.ibb.co/12HdCxp/Captura-de-pantalla-2024-04-18-174201.png" alt="Imagen 3" width="400" height="300"></td>
+        </tr>
+        <tr>
+            <td><img src="https://i.ibb.co/b5RfhcK/Captura-de-pantalla-2024-04-18-174211.png"  alt="Imagen 5" width="400" height="300"></td>
+            <td><img src="https://i.ibb.co/Qmq1RHX/Captura-de-pantalla-2024-04-18-174223.png" alt="Imagen 6" width="400" height="300"></td>
+            <td><img src="https://i.ibb.co/f4KZZFF/Captura-de-pantalla-2024-04-18-174232.png" alt="Imagen 7" width="400" height="300"></td>
+            <td></td> <!-- Este espacio está vacío porque solo hay 7 imágenes -->
+        </tr>
+    </table>
         <footer>
         <p>&copy; 2024 Minecode - Todos los derechos reservados.</p>
     </footer>
