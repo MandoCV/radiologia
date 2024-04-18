@@ -17,7 +17,7 @@
             <li>Alexis Gomez - Encargado de Documentación</li>
             <li>Janeth Ahuacatitla - Encargada de la Base de Datos</li>
             <li>Juan Cruz Ortiz - Encargado del Backend</li>
-            <li>Armando Carrazco Vargas - Encargado del Frontend</li>
+            <li>Armando Carrazco Vargas - Lider del Proyecto / Encargado del Frontend</li>
         </ul>
     </section>
     <section>
@@ -42,7 +42,7 @@
             <li>Mantenimiento y soporte técnico</li>
         </ul>
     </section>
-        <h1>Tecnologías utilizadas en el desarrollo de Radiología e Imagen</h1>
+        <h1>Tecnologías utilizadas en el desarrollo del proyecto Radiología e Imagen</h1>
     <table>
         <tr>
             <th>Tecnología</th>
@@ -107,7 +107,6 @@
             <td><img src="https://i.ibb.co/b5RfhcK/Captura-de-pantalla-2024-04-18-174211.png"  alt="Imagen 5" width="400" height="300"></td>
             <td><img src="https://i.ibb.co/Qmq1RHX/Captura-de-pantalla-2024-04-18-174223.png" alt="Imagen 6" width="400" height="300"></td>
             <td><img src="https://i.ibb.co/f4KZZFF/Captura-de-pantalla-2024-04-18-174232.png" alt="Imagen 7" width="400" height="300"></td>
-            <td></td> <!-- Este espacio está vacío porque solo hay 7 imágenes -->
         </tr>
     </table>
         <footer>
