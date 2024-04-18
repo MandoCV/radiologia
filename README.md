@@ -5,7 +5,7 @@
 <center><a href="https://imgbb.com/"><img src="https://i.ibb.co/VMfcb2z/minecode-removebg-preview.png" alt="minecode-removebg-preview" border="0" /></a><center>
     
 </head>
-<body>
+<body>  
     <h1>MineCode Empresa de Software</h1>
     <center> <a href="https://ibb.co/LJr52s3"><img src="https://i.ibb.co/mX08MP3/Captura-de-pantalla-2024-04-18-101358.png" alt="Captura-de-pantalla-2024-04-18-101358" border="0" /></a><center>
     <header>
@@ -33,7 +33,17 @@
             <li>Crear interfaces de usuario atractivas y funcionales en el frontend.</li>
         </ol>
     </section>
-    <footer>
+        <h2>Funcionalidades</h2>
+        <ul>
+            <li>Desarrollo de aplicaciones web personalizadas</li>
+            <li>Desarrollo de aplicaciones móviles para Android</li>
+            <li>Integración de sistemas y bases de datos</li>
+            <li>Seguridad y cifrado de datos</li>
+            <li>Diseño y experiencia de usuario (UI/UX)</li>
+            <li>Mantenimiento y soporte técnico</li>
+        </ul>
+    </section>
+        <footer>
         <p>&copy; 2024 Minecode - Todos los derechos reservados.</p>
     </footer>
 </body>
