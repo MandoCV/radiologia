@@ -3,6 +3,9 @@ from rest_framework import viewsets
 from rest_framework import permissions
 from .models import Estudio, Cita, ResultadoEstudio, Consumible
 from .serializer import estudioSerializer, citaSerializer, resultadoEstudioSerializer, consumibleSerializer
+from rest_framework.authtoken.models import Token
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 class estudioViewSet(viewsets.ViewSet):

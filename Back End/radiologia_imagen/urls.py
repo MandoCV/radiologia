@@ -3,6 +3,7 @@ from django.urls import path, include
 from rest_framework import routers
 from rest_framework.documentation import include_docs_urls
 from radiologia_imagen import views
+from rest_framework.decorators import authentication_classes, permission_classes
 
 #api version
 router = routers.DefaultRouter()
@@ -14,5 +15,5 @@ router.register(r'cosumible', views.consumibleViewSet)
 
 urlpatterns = [
     path('api/v1/', include(router.urls)),
-    path('docs/', include_docs_urls(title='Documentacion Hospital - Radiologia'))
+    #path('docs/', include_docs_urls(title='Documentacion Hospital - Radiologia', permission_classes=[], authentication_classes=[]))
 ]
