@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Estudio, Cita, ResultadoEstudio, Consumible
+from .models import Estudio, Cita, ResultadoEstudio
 
 class estudioSerializer(serializers.Serializer):
     class Meta:
@@ -16,7 +16,3 @@ class resultadoEstudioSerializer(serializers.Serializer):
         model= ResultadoEstudio
         fields= '__all__'
 
-class consumibleSerializer(serializers.Serializer):
-    class Meta:
-        model= Consumible
-        fields= '__all__'
