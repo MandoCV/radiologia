@@ -6,6 +6,6 @@ VIEW `radiologia_e_imagen`.`vw_lista_estudios` AS
     SELECT 
         `e`.`id` AS `ID_Estudio`,
         `e`.`nombre` AS `Nombre_Estudio`,
-        `e`.`descripcion` AS `Descripcion`
+        `e`.`descripcion` AS `descripcion`
     FROM
         `radiologia_e_imagen`.`estudios` `e`
