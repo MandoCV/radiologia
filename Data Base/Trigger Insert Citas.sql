@@ -9,9 +9,6 @@ FOR EACH ROW BEGIN
     SET nombre_paciente = (SELECT CONCAT_WS(" ", p.Nombre, p.Primer_Apellido, p.Segundo_Apellido)
                            FROM pacientes p
                            WHERE p.Persona_ID = NEW.paciente_id);
-    SET nombre_medico = (SELECT CONCAT_WS(" ", pm.Nombre, pm.Primer_Apellido, pm.Segundo_Apellido)
-                         FROM personal_medico pm
-                         WHERE pm.Persona_ID = NEW.medico_id);
     SET descripcion_estudio = (SELECT e.Descripcion
                                FROM Estudios e
                                WHERE e.id = NEW.tipo_estudio_id);
