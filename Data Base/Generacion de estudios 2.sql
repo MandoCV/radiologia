@@ -17,8 +17,6 @@ BEGIN
 
     WHILE(i <= v_cantidad) DO
         -- Seleccionar un paciente y un médico de manera aleatoria de la base de datos
-        -- Supongamos que las tablas se llaman pacientes y medicos respectivamente
-        -- y que ambas tienen un campo id
         SET v_paciente_id = (SELECT id FROM pacientes ORDER BY RAND() LIMIT 1);
         SET v_medico_id = (SELECT id FROM medicos ORDER BY RAND() LIMIT 1);
         
@@ -30,7 +28,6 @@ BEGIN
         END IF;
 
         -- Generar una descripción y resultado aleatorio para el estudio
-        -- Esto es solo un ejemplo simplificado. Se podrían generar descripciones más complejas y realistas.
         SET v_descripcion = CONCAT('Estudio de ', v_nombre_estudio, ' realizado sin incidencias destacables.');
         SET v_resultado = CONCAT('Resultado del estudio de ', v_nombre_estudio, ': Todo normal.');
 
