@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="WB DataDic" />
+    <meta name="description" content="radiologia_e_imagen Data Dictionary." />
+    <title>radiologia_e_imagen Data Dictionary</title>
+    <style type="text/css">
+    table{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    abbr{
+        cursor: help;
+    }
+    table, td, th{
+        border-style: solid;
+        border-width: 1px;
+    }
+    table caption{
+        font-size: 120%;
+        font-weight: bold;
+    }
+    caption{
+        color: black;
+    }
+    td, th{
+        border-color: silver;
+    }
+    tr:hover{
+        color: #333;
+        background-color: #F2F2F2;
+    }
+    th{
+        background-color: silver;
+    }
+    td{
+        color: gray;
+    }
+    ul{
+        font-style: italic;
+    }
+    #title-sect{
+        color: gray;
+        text-align: right;
+    }
+    .proj-desc{
+        text-align: right;
+    }
+    </style>
+</head>
+<body>
+<div id="title-sect">
+<h1>radiologia_e_imagen<br> Data Dictionay</h1>
+<p>
+<em>2024-04-18</em>
+</p>
+<p class="proj-desc">
+<em></em>
+</p>
+</div>
+<h2>Alphabetic Index</h2>
+<ul>
+<li><a href='#areas_medicas'>areas_medicas</a></li>
+<li><a href='#bitacora'>bitacora</a></li>
+<li><a href='#citas'>citas</a></li>
+<li><a href='#departamentos'>departamentos</a></li>
+<li><a href='#estudios'>estudios</a></li>
+<li><a href='#medicamentos'>medicamentos</a></li>
+<li><a href='#pacientes'>pacientes</a></li>
+<li><a href='#personal_medico'>personal_medico</a></li>
+<li><a href='#personas'>personas</a></li>
+<li><a href='#receta_medica'>receta_medica</a></li>
+<li><a href='#receta_medica_detalle'>receta_medica_detalle</a></li>
+<li><a href='#resultados_estudios'>resultados_estudios</a></li>
+</ul>
+<table id='areas_medicas'>
+<caption>areas_medicas</caption>
+<tr><td colspan='11'>Tabla enfocada a las areas que hay en un hospital medico</td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>ID</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td>Tipo de dato: int unsigned\nDescripción: Identificador único y autoincremental para cada área médica. Siendo un entero sin signo (unsigned), no permite valores negativos, lo que incrementa el rango disponible para este campo.\nRestricciones: Clave primaria (PRIMARY KEY), no nulo (NOT NULL), autoincremental (AUTO_INCREMENT).</td>
+</tr>
+<tr>
+    <td>Nombre</td>
+    <td>VARCHAR(150)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: varchar(150)\nDescripción: El nombre del área médica, como "Cardiología" o "Neurología". Este campo está limitado a 150 caracteres.\nRestricciones: No nulo (NOT NULL).</td>
+</tr>
+<tr>
+    <td>Descripcion</td>
+    <td>TEXT</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: text\nDescripción: Una Descripción extensa del área médica, que puede incluir detalles sobre los tipos de servicios ofrecidos, especializaciones y otros datos relevantes.\nRestricciones: Puede ser nulo. Al ser de tipo text, permite una longitud extensa de texto sin una longitud definida máxima.</td>
+</tr>
+<tr>
+    <td>Estatus</td>
+    <td>BIT(1)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>b'1'</td>
+    <td>Tipo de dato: bit(1)\nDescripción: Campo booleano que indica si el área médica está activa (1) o inactiva (0). El uso del tipo bit(1) es eficiente para almacenar valores booleanos.\nRestricciones: Puede ser nulo, con un valor predeterminado de 1 (b'1'), lo que significa que las nuevas áreas médicas están activas por defecto.</td>
+</tr>
+<tr>
+    <td>Fecha_Registro</td>
+    <td>DATETIME</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>CURRENT_TIMESTAMP</td>
+    <td>Tipo de dato: datetime\nDescripción: La fecha y hora en que se registró el área médica en el sistema.\nRestricciones: No nulo (NOT NULL), con un valor predeterminado del momento actual (CURRENT_TIMESTAMP). Este campo se actualiza automáticamente al momento de la inserción del registro.</td>
+</tr>
+<tr>
+    <td>Fecha_Actualizacion</td>
+    <td>DATETIME</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: datetime\nDescripción: La fecha y hora de la última actualización realizada en el registro. Puede incluir cualquier modificación hecha en el registro.\nRestricciones: Puede ser nulo, lo que indica que no se han realizado actualizaciones desde su creación.</td>
+</tr>
+<table id='bitacora'>
+<caption>bitacora</caption>
+<tr><td colspan='11'>Para registrar actividades de auditoría en una base de datos, como inserciones, actualizaciones o eliminaciones de registros</td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>ID</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td>Tipo de dato: int unsigned\nDescripción: Identificador único y autoincremental para cada entrada de bitácora. El uso de unsigned aumenta el rango de valores positivos que el campo puede almacenar.\nRestricciones: Clave primaria (PRIMARY KEY), no nulo (NOT NULL), autoincremental (AUTO_INCREMENT).</td>
+</tr>
+<tr>
+    <td>Nombre_Tabla</td>
+    <td>VARCHAR(80)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: varchar(80)\nDescripción: Nombre de la tabla en la base de datos que está siendo auditada. Esto ayuda a identificar en qué tabla se realizó la operación auditada.\nRestricciones: No nulo (NOT NULL).</td>
+</tr>
+<tr>
+    <td>Usuario</td>
+    <td>VARCHAR(80)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: varchar(80)\nDescripción: Nombre del usuario o identificador del sistema que realizó la operación. Esto permite rastrear qué usuarios están haciendo cambios específicos en la base de datos.\nRestricciones: No nulo (NOT NULL).\n</td>
+</tr>
+<tr>
+    <td>Operacion</td>
+    <td>ENUM('Insert', 'Update', 'Delete')</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: enum('Insert', 'Update', 'Delete')\nDescripción: Tipo de operación que se registró. Las opciones son 'Insert', 'Update', y 'Delete', las cuales son las principales actividades que generalmente se desean auditar.\nRestricciones: No nulo (NOT NULL).</td>
+</tr>
+<tr>
+    <td>Descripcion</td>
+    <td>TEXT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: text\nDescripción: Descripción detallada de la operación realizada. Esto puede incluir los detalles de los registros modificados o cualquier otra información relevante que ayude a comprender el contexto de la operación.\nRestricciones: No nulo (NOT NULL).\n</td>
+</tr>
+<tr>
+    <td>Fecha_Hora</td>
+    <td>DATETIME</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>CURRENT_TIMESTAMP</td>
+    <td>Tipo de dato: datetime\nDescripción: Fecha y hora exacta cuando se realizó la operación. El valor predeterminado es el momento en que se inserta la entrada en la bitácora (CURRENT_TIMESTAMP).\nRestriciones: No nulo (NOT NULL).</td>
+</tr>
+<table id='citas'>
+<caption>citas</caption>
+<tr><td colspan='11'>Funciona como un calendario donde se asocian pacientes, médicos y tipos de estudios o consultas programadas en fechas y horas específicas</td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>id</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td>Tipo de dato: int unsigned\nDescripción: Identificador único y autoincremental para cada cita, lo que facilita una referencia específica y ónica para cada registro.\nRestricciones: Clave primaria (PRIMARY KEY), no nulo (NOT NULL), autoincremental (AUTO_INCREMENT).</td>
+</tr>
+<tr>
+    <td>fecha</td>
+    <td>DATE</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: date\nDescripción: Fecha programada para la cita. Permite organizar y buscar citas por días específicos.\nRestricciones: Puede ser nulo (DEFAULT NULL).</td>
+</tr>
+<tr>
+    <td>hora</td>
+    <td>TIME</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: time\nDescripción: Hora específica en la que está programada la cita. Este detalle es crucial para evitar solapamientos y para la planificación diaria.\nRestricciones: Puede ser nulo (DEFAULT NULL).</td>
+</tr>
+<tr>
+    <td>paciente_id</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: int unsigned\nDescripción: Referencia al identificador del paciente que ha reservado o para quien está reservada la cita.\nRestricciones: Puede ser nulo (DEFAULT NULL). Clave externa (FOREIGN KEY) que referencia a pacientes.Persona_ID.</td>
+</tr>
+<tr>
+    <td>medico_id</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: int unsigned\nDescripción: Identificador del médico que atenderá la cita. Permite relacionar cada cita con un médico específico.\nRestricciones: Puede ser nulo (DEFAULT NULL). Clave externa (FOREIGN KEY) que referencia a personal_medico.Persona_ID.</td>
+</tr>
+<tr>
+    <td>tipo_estudio_id</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: int unsigned\nDescripción: Identificador del tipo de estudio o consulta que se realizará en la cita. Esto puede incluir diferentes procedimientos médicos o tipos de consultas.\nRestricciones: Puede ser nulo (DEFAULT NULL). Clave externa (FOREIGN KEY) que referencia a estudios.id.</td>
+</tr>
+<table id='departamentos'>
+<caption>departamentos</caption>
+<tr><td colspan='11'>está diseñada para estructurar y organizar los diversos departamentos dentro de un hospital o clínica, permitiendo una gestión clara de las diferentes áreas y sus respectivas jerarquéas y responsabilidades.</td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>ID</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td>Tipo de dato: int unsigned\nDescripción: Identificador único y autoincremental para cada departamento, que facilita la referencia y gestión específica de cada uno.\nRestricciones: Clave primaria (PRIMARY KEY), no nulo (NOT NULL), autoincremental (AUTO_INCREMENT).</td>
+</tr>
+<tr>
+    <td>Nombre</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: varchar(100)\nDescripción: Nombre del departamento. Este campo es esencial para la identificación fácil y directa del departamento dentro de la organización.\nRestricciones: No nulo (NOT NULL).</td>
+</tr>
+<tr>
+    <td>AreaMedica_ID</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: int unsigned\nDescripción: Identificador de la área médica a la que pertenece el departamento, facilitando la organización estructural y la asignación de recursos.\nRestricciones: Puede ser nulo (DEFAULT NULL). Clave externa (FOREIGN KEY) que referencia a areas_medicas.ID.</td>
+</tr>
+<tr>
+    <td>Departamento_Superior_ID</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: int unsigned\nDescripción: Identificador del departamento superior jerárquico, si existe, permitiendo establecer una estructura jerárquica clara dentro de la organización.\nRestricciones: Puede ser nulo (DEFAULT NULL). Clave externa (FOREIGN KEY) que referencia a departamentos.ID.</td>
+</tr>
+<tr>
+    <td>Responsable_ID</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: int unsigned\nDescripción: Identificador del empleado que es responsable del departamento, lo que facilita la gestión y la asignación de responsabilidades.\nRestricciones: Puede ser nulo (DEFAULT NULL).</td>
+</tr>
+<tr>
+    <td>Estatus</td>
+    <td>BIT(1)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>b'1'</td>
+    <td>Tipo de dato: bit(1)\nDescripción: Indica el estatus activo (1) o inactivo (0) del departamento, permitiendo gestionar fácilmente su operatividad.\nRestricciones: No nulo (NOT NULL), valor predeterminado (DEFAULT b'1').</td>
+</tr>
+<tr>
+    <td>Fecha_Registro</td>
+    <td>DATETIME</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>CURRENT_TIMESTAMP</td>
+    <td>Tipo de dato: datetime\nDescripción: Fecha y hora en que el registro del departamento fue creado en el sistema.\nRestricciones: No nulo (NOT NULL), valor predeterminado (DEFAULT CURRENT_TIMESTAMP).</td>
+</tr>
+<tr>
+    <td>Fecha_Actualizacion</td>
+    <td>DATETIME</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: datetime\nDescripción: Fecha y hora de la última actualización del registro del departamento. Esto es importante para el seguimiento de cambios y la auditoría.\nRestricciones: Puede ser nulo (DEFAULT NULL).</td>
+</tr>
+<table id='estudios'>
+<caption>estudios</caption>
+<tr><td colspan='11'>Es utilizada para registrar y catalogar los distintos tipos de estudios médicos o diagnósticos que se pueden realizar en pacientes. Esta estructura permite una fácil referencia y organización de procedimientos diagnósticos, facilitando tanto la administración como el acceso a la información médica relevante.</td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>id</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td>Tipo de dato: int unsigned\nDescripción: Este es el identificador único y autoincremental para cada estudio registrado, facilitando la referencia unóvoca a cada tipo de estudio médico en otras tablas o consultas dentro del sistema.\nRestricciones: Clave primaria (PRIMARY KEY), no nulo (NOT NULL), y el valor se autoincrementa (AUTO_INCREMENT), comenzando desde 11.\n</td>
+</tr>
+<tr>
+    <td>nombre</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: varchar(100)\nDescripción: El nombre del estudio médico, como puede ser "Radiografía", "Ultrasonido", "Resonancia Magnética", etc. Este campo permite identificar de manera rápida y clara el tipo de estudio.\nRestricciones: Puede estar vacío (DEFAULT NULL), y tiene un límite de 100 caracteres, lo que es generalmente suficiente para nombrar los estudios médicos.</td>
+</tr>
+<tr>
+    <td>descripcion</td>
+    <td>VARCHAR(500)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: varchar(500)\nDescripción: Una Descripción más detallada del estudio, que puede incluir información sobre qué consiste el estudio, en qué circunstancias se recomienda, y cualquier otro dato relevante que pueda ayudar a comprender mejor el procedimiento o su propósito.\nRestricciones: Puede estar vacío (DEFAULT NULL), permitiendo flexibilidad en cuanto a la cantidad de información que se desea registrar. El límite de 500 caracteres proporciona un espacio amplio para una Descripción exhaustiva.</td>
+</tr>
+<table id='medicamentos'>
+<caption>medicamentos</caption>
+<tr><td colspan='11'>Para almacenar información detallada sobre los medicamentos disponibles en un hospital o clínica. Es crucial para gestionar el inventario de medicamentos, facilitando la prescripción y administración correctas de tratamientos médicos. </td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>ID</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td>Tipo de dato: int unsigned\nDescripción: Es el identificador único para cada registro de medicamento en la base de datos. Este campo es autoincremental, lo cual asegura que cada medicamento tenga un número único asignado automáticamente al ser agregado a la base.\nRestricciones: Clave primaria (PRIMARY KEY), no nulo (NOT NULL), autoincremental (AUTO_INCREMENT).</td>
+</tr>
+<tr>
+    <td>Nombre_Comercial</td>
+    <td>VARCHAR(250)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: varchar(250)\nDescripción: El nombre comercial bajo el cual el medicamento es vendido o más comónmente conocido. Este es el nombre que usualmente se ve en las etiquetas de los medicamentos.\nRestricciones: No nulo (NOT NULL).</td>
+</tr>
+<tr>
+    <td>Nombre_Generico</td>
+    <td>VARCHAR(250)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: varchar(250)\nDescripción: El nombre genórico del medicamento, que generalmente es el nombre del principio activo. Este es un dato esencial para la identificación precisa del medicamento, independientemente de la marca.\nRestricciones: No nulo (NOT NULL).\n</td>
+</tr>
+<tr>
+    <td>Via_Administracion</td>
+    <td>ENUM('Oral', 'Intravenoso', 'Rectal', 'Cutáneo', 'Subcutáneo', 'Oftálmico', 'Ótica', 'Nasal', 'Tópica', 'Parental', 'Vaginal')</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: enum\nDescripción: Las posibles vías de administración del medicamento, incluyendo oral, intravenoso, rectal, cutóneo, entre otros. Esta información es crítica para garantizar que el medicamento se administre de manera segura y efectiva.\nRestricciones: Puede ser nulo (DEFAULT NULL).</td>
+</tr>
+<tr>
+    <td>Presentacion</td>
+    <td>ENUM('Grageas', 'Suspensión', 'Pomada', 'Jabón', 'Polvo', 'Supositorios', 'Solución', 'Cápsulas', 'Parche', 'Jarabe', 'Gotas', 'Tabletas')</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: enum\nDescripción: Las diferentes formas en que el medicamento puede ser presentado, como grageas, suspensión, pomada, etc. Esto ayuda a identificar la forma específica en que el medicamento debe ser utilizado.\nRestricciones: Puede ser nulo (DEFAULT NULL).</td>
+</tr>
+<tr>
+    <td>Estatus</td>
+    <td>BIT(1)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>b'1'</td>
+    <td>Tipo de dato: bit(1)\nDescripción: Indica el estado de disponibilidad del medicamento en el inventario. Un valor de 1 indica que el medicamento está disponible, mientras que un valor de 0 indicaría que no está disponible.\nRestricciones: Valor por defecto es 1 (DEFAULT b'1').</td>
+</tr>
+<table id='pacientes'>
+<caption>pacientes</caption>
+<tr><td colspan='11'>Es diseñada para almacenar información detallada sobre los pacientes de una institución médica, siendo un componente crítico en la gestión de datos de salud en cualquier sistema de información hospitalaria. </td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>Persona_ID</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: int unsigned\nDescripción: Actúa como un identificador único para cada paciente, generalmente vinculado a una tabla personas que contiene datos demográficos y personales básicos. Este campo sirve como clave primaria y enlace a la información general de la persona.\nRestricciones: Clave primaria (PRIMARY KEY), no nulo (NOT NULL).\nRelaciones: Existe una restricción de clave foránea (FOREIGN KEY) que vincula este campo con la columna ID de la tabla personas.</td>
+</tr>
+<tr>
+    <td>NSS</td>
+    <td>VARCHAR(15)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>NSS (número de Seguridad Social):\nTipo de dato: varchar(15)\nDescripción: número único de seguridad social del paciente, utilizado para identificarlo dentro de sistemas de salud públicos y privados.\nRestricciones: Puede ser único (UNIQUE KEY), puede ser nulo.</td>
+</tr>
+<tr>
+    <td>Tipo_Seguro</td>
+    <td>VARCHAR(50)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: varchar(50)\nDescripción: Descripción del tipo de seguro médico que tiene el paciente, que puede incluir coberturas de salud pública o privada.\nRestricciones: No nulo (NOT NULL).</td>
+</tr>
+<tr>
+    <td>Fecha_Registro</td>
+    <td>DATETIME</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>CURRENT_TIMESTAMP</td>
+    <td>Tipo de dato: datetime\nDescripción: Fecha y hora en la que el paciente fue registrado en el sistema.\nRestricciones: No nulo (NOT NULL), valor por defecto es el momento actual (DEFAULT CURRENT_TIMESTAMP).</td>
+</tr>
+<tr>
+    <td>Fecha_UltimaCita</td>
+    <td>DATETIME</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: datetime\nDescripción: Fecha y hora de la última cita médica que el paciente tuvo en la institución.\nRestriciones: No nulo (NOT NULL).</td>
+</tr>
+<tr>
+    <td>Estatus_Medico</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>'Normal'</td>
+    <td>Tipo de dato: varchar(100)\nDescripción: Descripción general del estado de salud actual del paciente, como 'Normal', 'En tratamiento', etc.\nRestricciones: Valor por defecto es 'Normal' (DEFAULT 'Normal').</td>
+</tr>
+<tr>
+    <td>Estatus_Vida</td>
+    <td>ENUM('Vivo', 'Finado', 'Coma', 'Vegetativo')</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>'Vivo'</td>
+    <td>Tipo de dato: enum('Vivo','Finado','Coma','Vegetativo')\nDescripción: Estado vital del paciente, indicando si está vivo, fallecido, en coma o en estado vegetativo.\nRestricciones: No nulo (NOT NULL), valor por defecto es 'Vivo' (DEFAULT 'Vivo').</td>
+</tr>
+<tr>
+    <td>Estatus</td>
+    <td>BIT(1)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: bit(1)\nDescripción: Indica si el registro del paciente está activo o inactivo en el sistema, lo cual puede ser útil para mantener registros históricos sin eliminar datos.\nRestricciones: Puede ser nulo (DEFAULT NULL).</td>
+</tr>
+<table id='personal_medico'>
+<caption>personal_medico</caption>
+<tr><td colspan='11'>Para almacenar información específica sobre el personal médico que trabaja en una institución de salud.</td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>Persona_ID</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: int unsigned\nDescripción: Identificador único para cada miembro del personal, vinculado a una tabla personas que contiene datos demográficos y personales. Este campo es la clave primaria y garantiza que cada registro en personal_medico corresponda a una persona única.\nRestricciones: No nulo (NOT NULL), clave primaria (PRIMARY KEY).\nRelaciones: Existe una restricción de clave foránea (FOREIGN KEY) que vincula este campo con la columna ID de la tabla personas.</td>
+</tr>
+<tr>
+    <td>Departamento_ID</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: int unsigned\nDescripción: Identificador del departamento donde el personal está asignado. Esto facilita la organización y la gestión del personal por áreas específicas.\nRestricciones: No nulo (NOT NULL).\nRelaciones: Clave foránea que referencia a la tabla departamentos.</td>
+</tr>
+<tr>
+    <td>Especialidad</td>
+    <td>VARCHAR(50)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: varchar(50)\nDescripción: Descripción de la especialidad médica del personal, si aplica.\nRestricciones: Puede ser nulo (DEFAULT NULL).</td>
+</tr>
+<tr>
+    <td>Tipo</td>
+    <td>ENUM('médico', 'Enfermero', 'Administrativo', 'Directivo', 'Apoyo', 'Residente', 'Interno')</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: enum('médico','Enfermero','Administrativo','Directivo','Apoyo','Residente','Interno')\nDescripción: Categoría del personal dentro de la organización, lo que ayuda a determinar sus roles y responsabilidades.\nRestricciones: No nulo (NOT NULL).</td>
+</tr>
+<tr>
+    <td>Cedula_Profesional</td>
+    <td>INT(8)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: int(8) unsigned zerofill\nDescripción: número de Cádula profesional del personal médico, un requisito para quienes ejercen como médicos o en otras especialidades que lo requieran.\nRestricciones: Puede ser único (UNIQUE KEY), puede ser nulo.</td>
+</tr>
+<tr>
+    <td>Estatus</td>
+    <td>ENUM('Activo', 'Inactivo', 'Jubilado', 'Permiso')</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>'Activo'</td>
+    <td>Tipo de dato: enum('Activo','Inactivo','Jubilado','Permiso')\nDescripción: Estado actual del contrato laboral del empleado dentro de la organización.\nRestricciones: No nulo (NOT NULL), valor por defecto 'Activo' (DEFAULT 'Activo').</td>
+</tr>
+<tr>
+    <td>Fecha_Contratacion</td>
+    <td>DATETIME</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>CURRENT_TIMESTAMP</td>
+    <td>Tipo de dato: datetime\nDescripción: Fecha y hora en que el empleado fue contratado oficialmente.\nRestricciones: No nulo (NOT NULL), valor por defecto es el momento actual (DEFAULT CURRENT_TIMESTAMP).</td>
+</tr>
+<tr>
+    <td>Fecha_Terminacion_Contrato</td>
+    <td>DATETIME</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: datetime\nDescripción: Fecha y hora en que termina o terminó el contrato laboral del empleado, útil para gestionar la permanencia del personal.\nRestricciones: Puede ser nulo (DEFAULT NULL).</td>
+</tr>
+<table id='personas'>
+<caption>personas</caption>
+<tr><td colspan='11'>está diseñada para almacenar información detallada y esencial sobre individuos, tópicamente utilizada en contextos donde es importante tener un control riguroso sobre datos personales y biométricos.</td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>ID</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td>Tipo de dato: int unsigned\nDescripción: Identificador único para cada persona, siendo la clave primaria que permite referenciar a la persona en otras tablas relacionales.\nRestricciones: No nulo (NOT NULL), autoincrementable (AUTO_INCREMENT).</td>
+</tr>
+<tr>
+    <td>Titulo</td>
+    <td>VARCHAR(20)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: varchar(20)\nDescripción: Título honorífico o profesional de la persona (por ejemplo, Dr., Lic., Ing.).\nRestricciones: Puede ser nulo.</td>
+</tr>
+<tr>
+    <td>Nombre</td>
+    <td>VARCHAR(80)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: varchar(80)\nDescripción: Nombre(s) de la persona.\nRestricciones: No nulo (NOT NULL).</td>
+</tr>
+<tr>
+    <td>Primer_Apellido</td>
+    <td>VARCHAR(80)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: varchar(80)\nDescripción: Primer apellido de la persona.\nRestricciones: No nulo (NOT NULL).</td>
+</tr>
+<tr>
+    <td>Segundo_Apellido</td>
+    <td>VARCHAR(80)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: varchar(80)\nDescripción: Segundo apellido de la persona.\nRestricciones: Puede ser nulo.</td>
+</tr>
+<tr>
+    <td>CURP</td>
+    <td>VARCHAR(18)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: varchar(18)\nDescripción: Clave ónica de Registro de Población, un identificador único y oficial usado en México.\nRestricciones: Puede ser nulo, clave ónica (UNIQUE KEY).</td>
+</tr>
+<tr>
+    <td>Genero</td>
+    <td>ENUM('M', 'F', 'N/B')</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: enum('M','F','N/B')\nDescripción: Gónero de la persona, con opciones de masculino (M), femenino (F) o no binario/no especificado (N/B).\nRestricciones: No nulo (NOT NULL).</td>
+</tr>
+<tr>
+    <td>Grupo_Sanguineo</td>
+    <td>ENUM('A', 'B', 'AB', 'O')</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: enum('A','B','AB','O') y enum('+','-')\nDescripción: Tipo de sangre de la persona, dividido en grupo sanguóneo y factor Rh (+ o -).\nRestricciones: No nulo (NOT NULL).</td>
+</tr>
+<tr>
+    <td>Tipo_Sanguineo</td>
+    <td>ENUM('+', '-')</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato:  enum('+','-')\nDescripción: Tipo de sangre de la persona, dividido en grupo sanguóneo y factor Rh (+ o -).\nRestricciones: No nulo (NOT NULL).</td>
+</tr>
+<tr>
+    <td>Fecha_Nacimiento</td>
+    <td>DATE</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: date\nDescripción: Fecha de nacimiento de la persona.\nRestricciones: No nulo (NOT NULL).</td>
+</tr>
+<tr>
+    <td>Estatus</td>
+    <td>BIT(1)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>b'1'</td>
+    <td>Tipo de dato: bit(1)\nDescripción: Indica el estado activo (1) o inactivo (0) de un registro en la base de datos, útil para control de acceso o estado administrativo.\nRestricciones: No nulo (NOT NULL), valor por defecto es 1 (DEFAULT b'1').</td>
+</tr>
+<tr>
+    <td>Fecha_Registro</td>
+    <td>DATETIME</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>CURRENT_TIMESTAMP</td>
+    <td>Tipo de dato: datetime\nDescripción: Registran las fechas de creación.\nRestricciones: Fecha_Registro no es nulo y se autoasigna al momento actual (DEFAULT CURRENT_TIMESTAMP).</td>
+</tr>
+<tr>
+    <td>Fecha_Actualizacion</td>
+    <td>DATETIME</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: datetime\nDescripción:  última actualización del registro.\nRestricciones:Puede ser nulo y se actualiza manualmente.</td>
+</tr>
+<table id='receta_medica'>
+<caption>receta_medica</caption>
+<tr><td colspan='11'>Proporciona información sobre las recetas médicas generadas en el contexto de una cita médica.</td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>ID</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td>Tipo de dato: int unsigned\nDescripción: Identificador único de la receta médica, siendo la clave primaria de la tabla.\nRestricciones: No nulo (NOT NULL), autoincrementable (AUTO_INCREMENT).</td>
+</tr>
+<tr>
+    <td>CITA_ID</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: int unsigned\nDescripción: Identificador de la cita médica durante la cual se generó la receta. Este campo establece una relación con la tabla de citas.\nRestricciones: No nulo (NOT NULL).</td>
+</tr>
+<tr>
+    <td>FECHA_HORA_REGISTRO</td>
+    <td>DATETIME</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>CURRENT_TIMESTAMP</td>
+    <td>Tipo de dato: datetime\nDescripción: Fecha y hora cuando la receta médica fue registrada en el sistema.\nRestricciones: No nulo (NOT NULL), valor por defecto es el momento actual (DEFAULT CURRENT_TIMESTAMP), que ayuda en la auditoría y seguimiento del registro.</td>
+</tr>
+<tr>
+    <td>ESTATUS</td>
+    <td>ENUM('Solicitada', 'Subrogada', 'Abastecida Totalmente', 'Parcialmente Abastecida', 'Cancelada')</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: enum('Solicitada','Subrogada','Abastecida Totalmente','Parcialmente Abastecida','Cancelada')\nDescripción: Estado actual de la receta médica, indicando si está solicitada, subrogada, abastecida totalmente, parcialmente abastecida o cancelada. Cada una de estas opciones tiene implicaciones en el flujo de trabajo de la atención médica y la gestión de inventario.\nRestricciones: Puede ser nulo.</td>
+</tr>
+<table id='receta_medica_detalle'>
+<caption>receta_medica_detalle</caption>
+<tr><td colspan='11'>Almacena los detalles específicos de cada medicamento prescrito en una receta médica. Cada entrada en esta tabla corresponde a un item individual de una receta, incluyendo detalles como la dosis y recomendaciones de uso.</td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>ID</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td>Tipo de dato: int unsigned\nDescripción: Identificador único para cada entrada de detalle de receta médica.\nRestricciones: No nulo (NOT NULL), autoincrementable (AUTO_INCREMENT), clave primaria de la tabla.</td>
+</tr>
+<tr>
+    <td>receta_id</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: int unsigned\nDescripción: Identificador de la receta médica asociada, el cual enlaza cada detalle con su receta correspondiente.\nRestricciones: No nulo (NOT NULL), clave foránea que referencia al ID de la tabla receta_medica.</td>
+</tr>
+<tr>
+    <td>MEDICAMENTO_ID</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: int unsigned\nDescripción: Identificador del medicamento prescrito. Este campo vincula el detalle de la receta con un registro específico en la tabla medicamentos.\nRestricciones: No nulo (NOT NULL), clave foránea que referencia al ID de la tabla medicamentos.</td>
+</tr>
+<tr>
+    <td>DOSIS</td>
+    <td>VARCHAR(1024)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Tipo de dato: varchar(1024)\nDescripción: Descripción detallada de la dosis prescrita del medicamento, incluyendo la cantidad y la frecuencia de administración.\nRestricciones: No nulo (NOT NULL).</td>
+</tr>
+<tr>
+    <td>RECOMENDACIONES</td>
+    <td>VARCHAR(1024)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: varchar(1024)\nDescripción: Recomendaciones adicionales para la administración o el consumo del medicamento. Puede incluir advertencias sobre posibles interacciones o efectos secundarios.\nRestricciones: Puede ser nulo.</td>
+</tr>
+<table id='resultados_estudios'>
+<caption>resultados_estudios</caption>
+<tr><td colspan='11'>Almacena los resultados de diversos estudios médicos que se realizan a los pacientes durante sus citas. Esta tabla facilita la gestión y consulta de los resultados de dichos estudios, vinculóndolos con estudios específicos y citas médicas.</td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>id</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td>Tipo de dato: int unsigned\nDescripción: Identificador único para cada resultado de estudio.\nRestricciones: No nulo (NOT NULL), autoincrementable (AUTO_INCREMENT), y es la clave primaria de la tabla.</td>
+</tr>
+<tr>
+    <td>estudio_id</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: int unsigned\nDescripción: Identificador del tipo de estudio médico realizado, que enlaza a la tabla estudios.\nRestricciones: Puede ser nulo (DEFAULT NULL), clave foránea que referencia a id en la tabla estudios.</td>
+</tr>
+<tr>
+    <td>cita_id</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: int unsigned\nDescripción: Identificador de la cita médica durante la cual se realizó el estudio, vinculando el resultado con una cita específica.\nRestricciones: Puede ser nulo (DEFAULT NULL), clave foránea que referencia a id en la tabla citas.</td>
+</tr>
+<tr>
+    <td>Resultado</td>
+    <td>VARCHAR(500)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: varchar(500)\nDescripción: Descripción o datos del resultado del estudio médico realizado. Puede contener información textual o numérica dependiendo del tipo de estudio.\nRestricciones: Puede ser nulo (DEFAULT NULL).</td>
+</tr>
+<tr>
+    <td>id_persona</td>
+    <td>INT</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td>Tipo de dato: int\nDescripción: Identificador de la persona a la que se le realizó el estudio. Aunque no está directamente vinculado mediante una clave foránea en la declaración de la tabla, sirve para rastrear a qué paciente pertenece cada resultado.\nRestricciones: Puede ser nulo (DEFAULT NULL).</td>
+</tr>
+</table>
+</body>
+</html>
