@@ -8,6 +8,18 @@ CREATE DEFINER=`root`@`localhost` TRIGGER `Estudios_AFTER_INSERT` AFTER INSERT O
     );
 END
 ----------------------------------------------------------------------------------------------------------------------
+    CREATE DEFINER=`root`@`localhost` TRIGGER `Estudios_AFTER_UPDATE` AFTER UPDATE ON `estudios` FOR EACH ROW BEGIN
+    INSERT INTO bitacora VALUES (
+       DEFAULT, 'estudios', USER(), 'UPDATE',
+       CONCAT_WS(" ", 'El ESTUDIO con el ID:', OLD.id,
+                         'ha sido actualizado. Nombre anterior:', OLD.nombre,
+                         ', Nombre nuevo:', NEW.nombre,
+                         ', Descripción anterior:', OLD.descripcion,
+                         ', Descripción nueva:', NEW.descripcion),
+       NOW()
+    );
+END
+----------------------------------------------------------------------------------------------------------------------
 CREATE DEFINER=`root`@`localhost` TRIGGER `Estudios_AFTER_DELETE` AFTER DELETE ON `estudios` FOR EACH ROW BEGIN
     DECLARE nombre_estudio VARCHAR(100);
     SET nombre_estudio = OLD.nombre;
