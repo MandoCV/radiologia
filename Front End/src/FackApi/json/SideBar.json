@@ -11,7 +11,7 @@
   },
   {
     "title": "CRUD",
-    "name": "Crud",
+    "name": "Agenda de Citas",
     "is_heading": false,
     "is_active": false,
     "link": {
@@ -25,7 +25,7 @@
   
   {
     "title": "Tabla Dinamica",
-    "name": "Tabla Dinamica",
+    "name": "Tabla de Datos",
     "is_heading": false,
     "is_active": false,
     "link": {
@@ -38,7 +38,7 @@
   },
   {
     "title": "Dashboard",
-    "name": "Dashboard",
+    "name": "Gráficos Medicos",
     "is_heading": false,
     "is_active": false,
     "link": {
