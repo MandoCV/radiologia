@@ -17,8 +17,3 @@ class ResultadoEstudio(models.Model):
     cita = models.ForeignKey(Cita, on_delete=models.CASCADE)
     resultado = models.CharField(max_length=500)
     imagen = models.BinaryField()
-
-class Consumible(models.Model):
-    nombre = models.CharField(max_length=100)
-    cantidad = models.IntegerField()
-    precio = models.DecimalField(max_digits=10, decimal_places=2)
