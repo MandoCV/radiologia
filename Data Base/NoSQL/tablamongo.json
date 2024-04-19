@@ -1,0 +1,30 @@
+db.createCollection("actividades_diarias", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: ["fecha", "tipo_actividad", "medico"],
+         properties: {
+            fecha: {
+               bsonType: "date",
+               description: "Fecha de la actividad"
+            },
+            tipo_actividad: {
+               bsonType: "string",
+               description: "Tipo de actividad realizada"
+            },
+            medico: {
+               bsonType: "string",
+               description: "Nombre del médico responsable de la actividad"
+            },
+            duracion_minutos: {
+               bsonType: "int",
+               description: "Duración de la actividad en minutos"
+            },
+            detalles: {
+               bsonType: "string",
+               description: "Detalles adicionales de la actividad"
+            }
+         }
+      }
+   }
+})
