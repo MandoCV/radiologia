@@ -11,7 +11,6 @@ router = routers.DefaultRouter()
 router.register(r'estudio', views.estudioViewSet, 'estudio')
 router.register(r'cita', views.citaViewSet)
 router.register(r'resultadoEstudio', views.resultadoEstudioViewSet)
-router.register(r'cosumible', views.consumibleViewSet)
 
 urlpatterns = [
     path('api/v1/', include(router.urls)),

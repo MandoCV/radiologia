@@ -6,6 +6,7 @@ from .serializer import estudioSerializer, citaSerializer, resultadoEstudioSeria
 from rest_framework.authtoken.models import Token
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 class estudioViewSet(viewsets.ViewSet):
@@ -22,7 +23,3 @@ class resultadoEstudioViewSet(viewsets.ViewSet):
     serializer_class = resultadoEstudioSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-class consumibleViewSet(viewsets.ViewSet):
-    queryset = Consumible.objects.all()
-    serializer_class = consumibleSerializer
-    permission_classes = [permissions.IsAuthenticated]
