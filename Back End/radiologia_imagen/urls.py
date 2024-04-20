@@ -9,8 +9,8 @@ from rest_framework.decorators import authentication_classes, permission_classes
 router = routers.DefaultRouter()
 #Registrando cada una de las vistas
 router.register(r'estudio', views.estudioViewSet, 'estudio')
-router.register(r'cita', views.citaViewSet)
-router.register(r'resultadoEstudio', views.resultadoEstudioViewSet)
+router.register(r'cita', views.citaViewSet, 'cita')
+router.register(r'resultadoEstudio', views.resultadoEstudioViewSet, 'resultadoEstudio')
 
 urlpatterns = [
     path('api/v1/', include(router.urls)),

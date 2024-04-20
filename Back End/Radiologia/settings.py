@@ -135,7 +135,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Lista de cors que permite que otro sevidor se conecte
-CORS_ALLOWED_ORIGINS = ["http:localhost:8080/"]
+CORS_ALLOWED_ORIGINS = ["http://localhost:8080"]
 
 #Configuracion de rest_framework
 REST_FRAMEWORK = {
