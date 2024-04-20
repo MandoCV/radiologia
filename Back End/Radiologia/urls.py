@@ -25,5 +25,5 @@ from rest_framework.authtoken.models import Token
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('radiologia_imagen/', include('radiologia_imagen.urls')),
-    path('docs/', include_docs_urls(title='Radiologia Documentation', authentication_classes=[TokenAuthentication], permission_classes=[IsAuthenticated])),
+    path('docs/', include_docs_urls(title='Radiologia Documentation')),
 ]

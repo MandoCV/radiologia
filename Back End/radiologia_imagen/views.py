@@ -1,25 +1,31 @@
-from django.shortcuts import render
 from rest_framework import viewsets
-from rest_framework import permissions
-from .models import Estudio, Cita, ResultadoEstudio, Consumible
-from .serializer import estudioSerializer, citaSerializer, resultadoEstudioSerializer, consumibleSerializer
-from rest_framework.authtoken.models import Token
-from rest_framework.authentication import SessionAuthentication, BasicAuthentication
-from rest_framework.permissions import IsAuthenticated
-from django.shortcuts import get_object_or_404
+from .models import Estudio, Cita, ResultadoEstudio
+from .serializer import estudioSerializer, citaSerializer, resultadoEstudioSerializer
 
 # Create your views here.
-class estudioViewSet(viewsets.ViewSet):
+class estudioViewSet(viewsets.ModelViewSet):
     queryset = Estudio.objects.all()
     serializer_class = estudioSerializer
+    
+    def get_serializer_class(self):
+        if self.action == 'create' or self.action == 'update':
+            return estudioSerializer
+        return estudioSerializer
 
-class citaViewSet(viewsets.ViewSet):
+class citaViewSet(viewsets.ModelViewSet):
     queryset = Cita.objects.all()
     serializer_class = citaSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    
+    def get_serializer_class(self):
+        if self.action == 'create' or self.action == 'update':
+            return citaSerializer
+        return citaSerializer
 
-class resultadoEstudioViewSet(viewsets.ViewSet):
+class resultadoEstudioViewSet(viewsets.ModelViewSet):
     queryset = ResultadoEstudio.objects.all()
     serializer_class = resultadoEstudioSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
+    def get_serializer_class(self):
+        if self.action == 'create' or self.action == 'update':
+            return resultadoEstudioSerializer
+        return resultadoEstudioSerializer
